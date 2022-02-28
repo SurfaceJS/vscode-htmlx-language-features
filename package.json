@@ -1,0 +1,25 @@
+{
+    "name": "surface-htmlx",
+    "displayName": "Surface's Htmlx",
+    "description": "Surface's Htmlx support",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "htmlx",
+            "aliases": ["HTMLx", "htmlx"],
+            "extensions": [".htmlx"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "htmlx",
+            "scopeName": "source.htmlx",
+            "path": "./syntaxes/htmlx.tmLanguage.json"
+        }]
+    }
+}
