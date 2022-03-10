@@ -3,15 +3,34 @@
 // Hover to view descriptions of existing attributes.
 // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 {
-	"version": "0.2.0",
+    "compounds": [
+        {
+            "configurations": [
+                "Launch Client",
+                "Attach to Server"
+            ],
+            "name": "Client + Server"
+        }
+    ],
     "configurations": [
         {
-            "name": "Extension",
-            "type": "extensionHost",
-            "request": "launch",
+            "name": "Attach to Server",
+            "outFiles": [
+                "${workspaceFolder}/server/**/*.js"
+            ],
+            "port": 6009,
+            "request": "attach",
+            "restart": true,
+            "type": "node"
+        },
+        {
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}"
-            ]
+            ],
+            "name": "Launch Client",
+            "request": "launch",
+            "type": "extensionHost"
         }
-    ]
+    ],
+    "version": "0.2.0"
 }

@@ -1,0 +1,90 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "injectionSelector": "L:meta.tag - (comment, source.js)",
+    "name": "HTMLX Directive",
+    "patterns": [
+        {
+            "include": "#expression"
+        },
+        {
+            "include": "#directives"
+        }
+    ],
+    "repository": {
+        "directives": {
+            "patterns":
+            [
+                {
+                    "begin": "((?:@\\w+)|#\\b(?:if|else-if|else|for)\\b)|(#\\b(?:(?:inject|placeholder))\\b)(?:(?:(\\.)(?:(key|scope)|(\\w+)))|(?:(:)(\\w+)))?",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        },
+                        "2": {
+                            "name": "keyword.control"
+                        },
+                        "3": {
+                            "name": "punctuation.separator.key-value.html"
+                        },
+                        "4": {
+                            "name": "entity.other.attribute-name.html"
+                        },
+                        "5": {
+                            "name": "invalid.illegal"
+                        },
+                        "6": {
+                            "name": "punctuation.separator.key-value.html"
+                        },
+                        "7": {
+                            "name": "entity.other.attribute-name.html"
+                        }
+                    },
+                    "end": "(?=\\s*+[^=\\s])",
+                    "name": "meta.directive",
+                    "patterns": [
+                        {
+                            "include": "text.htmlx.attribute#expression"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(#\\b(?:\\w|-)+\\b)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "variable.other"
+                        }
+                    },
+                    "end": "(?=\\s*+[^=\\s])",
+                    "name": "meta.directive",
+                    "patterns": [
+                        {
+                            "include": "text.htmlx.attribute#expression"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(\\.{3})((?:(?:attributes|binds|injections|listeners)(\\|)?){1,4})(?<!\\|)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.operator.spread.js"
+                        },
+                        "2": {
+                            "name": "variable.other"
+                        },
+                        "3": {
+                            "name": "punctuation.separator.key-value.html"
+                        }
+                    },
+                    "end": "(?=\\s*+[^=\\s])",
+                    "name": "meta.directive",
+                    "patterns": [
+                        {
+                            "include": "text.htmlx.attribute#expression"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "scopeName": "text.htmlx.directive"
+}

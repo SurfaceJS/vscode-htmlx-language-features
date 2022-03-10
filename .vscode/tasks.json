@@ -1,0 +1,72 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "command": "${workspaceFolder}/node_modules/.bin/tsc.ps1 --build",
+            "label": "build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": {
+                "base": "$tsc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ]
+            },
+            "type": "shell"
+        },
+        {
+            "command": "${workspaceFolder}/node_modules/.bin/tsc.ps1 --build --clean",
+            "label": "clean",
+
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": {
+                "base": "$tsc"
+            },
+            "type": "shell"
+        },
+        {
+            "command": "${workspaceFolder}/node_modules/.bin/tsc.ps1 --build --clean --dry",
+            "label": "dry",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": {
+                "base": "$tsc"
+            },
+            "type": "shell"
+        },
+        {
+            "command": "${workspaceFolder}/node_modules/.bin/tsc.ps1",
+            "label": "tsc",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": {
+                "base": "$tsc",
+                "fileLocation": [
+                    "relative",
+                    "${fileDirname}"
+                ]
+            },
+            "type": "shell"
+        },
+    ]
+}

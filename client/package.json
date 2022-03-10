@@ -1,0 +1,24 @@
+{
+    "author": "HitalloExiled",
+    "dependencies": {
+        "server": "file:../server",
+        "@types/node": "~17.0.21",
+        "vscode-languageclient": "~7.0.0",
+        "vscode-uri": "~3.0.3"
+    },
+    "description": "Htmlx extension client",
+    "devDependencies": {
+        "@types/vscode": "1.65.0"
+    },
+    "engines": {
+        "vscode": "^1.43.0"
+    },
+    "license": "MIT",
+    "name": "@surface/htmlx-extension-client",
+    "publisher": "vscode",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "version": "0.1.0"
+}

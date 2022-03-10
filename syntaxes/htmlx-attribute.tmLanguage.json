@@ -1,0 +1,154 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "injectionSelector": "L:meta.tag - (comment, meta.attribute)",
+    "name": "HTMLX Attribute",
+    "patterns": [
+        {
+            "begin": "(:)([\\w-]+)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.operator"
+                },
+                "2": {
+                    "name": "entity.other.attribute-name.html"
+                }
+            },
+            "end": "(?=\\s*+[^=\\s])",
+            "name": "meta.directive.databind.one-way",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        {
+            "begin": "(::)([\\w-]+)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.operator"
+                },
+                "2": {
+                    "name": "entity.other.attribute-name.html"
+                }
+            },
+            "end": "(?=\\s*+[^=\\s])",
+            "name": "meta.directive.databind.two-way",
+            "patterns": [
+                {
+                    "begin": "=",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.separator.key-value.html"
+                        }
+                    },
+                    "end": "(?<=[^\\s=])(?!\\s*=)|(?=/?>)",
+                    "patterns": [
+                        {
+                            "match": "([\"'])(\\s*(?:(?!\\d)\\w+(?:\\.(?!\\d)\\w+)+)\\s*)(\\1)",
+                            "captures": {
+                                "1": {
+                                    "name": "punctuation.definition.template-expression.begin.html"
+                                },
+                                "2": {
+                                    "patterns": [
+                                        {
+                                            "include": "source.js"
+                                        }
+                                    ]
+                                },
+                                "3": {
+                                    "name": "punctuation.definition.template-expression.end.html"
+                                }
+                            },
+                            "name": "string.quoted.double.html"
+                        },
+                        {
+                            "match": "([\"'])(.*)(\\1)",
+                            "captures": {
+                                "1": {
+                                    "name": "punctuation.definition.template-expression.begin.html"
+                                },
+                                "2": {
+                                    "name": "invalid.illegal"
+                                },
+                                "3": {
+                                    "name": "punctuation.definition.template-expression.end.html"
+                                }
+                            },
+                            "name": "string.quoted.double.html"
+                        }
+                    ]
+                },
+                {
+                    "include": "#expression"
+                }
+            ]
+        }
+    ],
+    "repository": {
+        "expression": {
+            "patterns": [
+                {
+                    "begin": "=",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.separator.key-value.html"
+                        }
+                    },
+                    "end": "(?<=[^\\s=])(?!\\s*=)|(?=/?>)",
+                    "patterns": [
+                        {
+                            "match": "([^\\s\"'=<>`/]|/(?!>))+",
+                            "name": "string.unquoted.html"
+                        },
+                        {
+                            "begin": "\"",
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.template-expression.begin.html"
+                                }
+                            },
+                            "end": "\"",
+                            "endCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.template-expression.end.html"
+                                }
+                            },
+                            "name": "string.quoted.double.expression.html",
+                            "patterns": [
+                                {
+                                    "include": "source.js"
+                                }
+                            ]
+                        },
+                        {
+                            "begin": "'",
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.template-expression.begin.html"
+                                }
+                            },
+                            "end": "'",
+                            "endCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.template-expression.end.html"
+                                }
+                            },
+                            "name": "string.quoted.single.expression.html",
+                            "patterns": [
+                                {
+                                    "include": "source.js"
+                                }
+                            ]
+                        },
+                        {
+                            "match": "=",
+                            "name": "invalid.illegal.unexpected-equals-sign.html"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "scopeName": "text.htmlx.attribute"
+}

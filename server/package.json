@@ -1,0 +1,23 @@
+{
+    "author": "HitalloExiled",
+    "dependencies": {
+        "typescript": "4.6.2",
+        "vscode-css-languageservice": "^5.2.0",
+        "vscode-html-languageservice": "^4.2.4",
+        "vscode-languageserver": "^7.0.0",
+        "vscode-languageserver-textdocument": "^1.0.4",
+        "vscode-uri": "^3.0.3"
+    },
+    "description": "Htmlx extension server",
+    "engines": {
+        "node": "*"
+    },
+    "license": "MIT",
+    "name": "@surface/htmlx-extension-server",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {},
+    "version": "0.1.0"
+}

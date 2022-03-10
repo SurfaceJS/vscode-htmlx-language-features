@@ -1,0 +1,36 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "injectionSelector": "L:text.htmlx - (comment, meta.directive, meta.tag, string.interpolated.expression, source.css), meta.attribute",
+    "name": "HTMLX Interpolation",
+    "patterns": [
+        {
+            "captures": {
+                "1": {
+                    "name": "constant.character.escape.html"
+                }
+            },
+            "match": "(\\\\[#|{])"
+        },
+        {
+            "begin": "(?<!(?<!\\\\)\\\\)(\\{)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.template-expression.begin.html"
+                }
+            },
+            "end": "(})",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.template-expression.end.html"
+                }
+            },
+            "name": "string.interpolated.expression",
+            "patterns": [
+                {
+                    "include": "source.js"
+                }
+            ]
+        }
+    ],
+    "scopeName": "text.htmlx.interpolation"
+}

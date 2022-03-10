@@ -1,0 +1,115 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "injectionSelector": "L:text.htmlx - (comment, source.js)",
+    "name": "HTMLX Custom Element",
+    "patterns": [
+        {
+            "include": "#custom-element"
+        }
+    ],
+    "repository": {
+        "custom-element": {
+            "patterns": [
+                {
+                    "begin": "(<)(\\w+(?:-\\w+)+)(?=\\s|/?>)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.begin.html"
+                        },
+                        "2": {
+                            "name": "support.class"
+                        }
+                    },
+                    "end": "/?>",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.tag.end.html"
+                        }
+                    },
+                    "name": "meta.tag.custom.start.html",
+                    "patterns": [
+                        {
+                            "include": "text.html.basic#attribute"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(</)(\\w+(?:-\\w+)+)(?=\\s|/?>)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.begin.html"
+                        },
+                        "2": {
+                            "name": "support.class"
+                        }
+                    },
+                    "end": ">",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.tag.end.html"
+                        }
+                    },
+                    "name": "meta.tag.custom.end.html",
+                    "patterns": [
+                        {
+                            "include": "text.html.basic#attribute"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(<)(template)(?=\\s|/?>)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.begin.html"
+                        },
+                        "2": {
+                            "name": "keyword.control"
+                        }
+                    },
+                    "end": "/?>",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.tag.end.html"
+                        }
+                    },
+                    "name": "meta.tag.custom.start.html",
+                    "patterns": [
+                        {
+                            "include": "#directives"
+                        },
+                        {
+                            "include": "text.html.basic#attribute"
+                        }
+                    ]
+                },
+                {
+                    "begin": "(</)(template)(?=\\s|/?>)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.begin.html"
+                        },
+                        "2": {
+                            "name": "keyword.control"
+                        }
+                    },
+                    "end": ">",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.tag.end.html"
+                        }
+                    },
+                    "name": "meta.tag.custom.end.html",
+                    "patterns": [
+                        {
+                            "include": "#directives"
+                        },
+                        {
+                            "include": "text.html.basic#attribute"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "scopeName": "text.htmlx.custom-element"
+}

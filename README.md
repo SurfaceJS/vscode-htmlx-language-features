@@ -1,6 +1,6 @@
-# surface-htmlx README
+# htmlx-language-server README
 
-This is the README for your extension "surface-htmlx". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "htmlx-language-server". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

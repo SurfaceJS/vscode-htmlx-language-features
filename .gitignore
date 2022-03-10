@@ -1,2 +1,10 @@
 node_modules
+*.d.ts
+*.js
+*.js.map
+*.tsbuildinfo
 *.vsix
+!**/@types/**/*.d.ts
+!**/interfaces/**/*.d.ts
+!**/types/**/*.d.ts
+!server/internal/lib/jquery.d.ts

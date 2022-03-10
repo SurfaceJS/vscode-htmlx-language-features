@@ -1,0 +1,15 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions":
+    {
+        "outDir":  ".",
+        "rootDir": ".",
+        "types": ["node"]
+    },
+    "files":   ["browser.ts", "node.ts"],
+    "include": ["internal"],
+    "references":
+    [
+        { "path": "../server" }
+    ]
+}
