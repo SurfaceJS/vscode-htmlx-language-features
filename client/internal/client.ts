@@ -320,7 +320,7 @@ export default class Client
 
         this.languageClient.onRequest(CustomDataContentRequest.type, customDataSource.getContent);
 
-        const insertRequestor = async (kind: "autoQuote" | "autoClose", document: TextDocument, position: Position): Promise<string> =>
+        const insertRequestor = async (kind: "autoQuote" | "autoClose", document: TextDocument, position: Position): Promise<string | null> =>
         {
             const param: AutoInsertParams =
             {
@@ -352,7 +352,7 @@ export default class Client
         }
     }
 
-    private activateAutoInsertion(provider: (kind: "autoQuote" | "autoClose", document: TextDocument, position: Position) => Thenable<string>, supportedLanguages: { [id: string]: boolean }, runtime: IRuntime): Disposable
+    private activateAutoInsertion(provider: (kind: "autoQuote" | "autoClose", document: TextDocument, position: Position) => Thenable<string | null>, supportedLanguages: { [id: string]: boolean }, runtime: IRuntime): Disposable
     {
         const disposables: Disposable[] = [];
         workspace.onDidChangeTextDocument(onDidChangeTextDocument, null, disposables);

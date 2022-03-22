@@ -10,5 +10,5 @@ export type AutoInsertParams =
 
 export default class AutoInsertRequest
 {
-    public static readonly type: RequestType<AutoInsertParams, string, unknown> = new RequestType("html/autoInsert");
+    public static readonly type: RequestType<AutoInsertParams, string | null, unknown> = new RequestType("html/autoInsert");
 }

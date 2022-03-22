@@ -1,7 +1,7 @@
 import type { Range, TextDocumentIdentifier } from "vscode-languageserver/node.js";
 import { RequestType }                        from "vscode-languageserver/node.js";
 
-type SemanticTokenParams =
+export type SemanticTokenParams =
 {
     textDocument: TextDocumentIdentifier,
     ranges?:      Range[],
