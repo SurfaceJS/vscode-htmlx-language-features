@@ -9,6 +9,11 @@
         "vscode-uri": "^3.0.3"
     },
     "description": "Htmlx extension server",
+    "devDependencies": {
+        "@types/chai": "^4.3.0",
+        "chai": "^4.3.6",
+        "test-decorators": "^0.3.1"
+    },
     "engines": {
         "node": "*"
     },

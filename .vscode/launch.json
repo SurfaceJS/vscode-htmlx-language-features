@@ -14,6 +14,15 @@
     ],
     "configurations": [
         {
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
             "name": "Attach to Server",
             "outFiles": [
                 "${workspaceFolder}/server/**/*.js"
@@ -30,7 +39,35 @@
             "name": "Launch Client",
             "request": "launch",
             "type": "extensionHost"
-        }
+        },
+        {
+            "args": [
+                "--timeout=9999999",
+                "--colors",
+                "${fileDirname}/${fileBasenameNoExtension}.js"
+            ],
+            "cwd": "${workspaceFolder}",
+            "name": "Debug Test",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js",
+                "!**/node_modules",
+            ],
+            "resolveSourceMapLocations": [
+                "!**/node_modules/**"
+            ],
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "protocol": "pwa-node",
+            "request": "launch",
+            "runtimeArgs": [
+                "--experimental-json-modules",
+                "--nolazy"
+            ],
+            "skipFiles": [
+                "<node_internals>/**",
+            ],
+            "sourceMaps": true,
+            "type": "node"
+        },
     ],
     "version": "0.2.0"
 }

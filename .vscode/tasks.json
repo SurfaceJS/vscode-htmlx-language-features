@@ -68,5 +68,17 @@
             },
             "type": "shell"
         },
+        {
+            "command": "${workspaceFolder}/node_modules/.bin/mocha.cmd ${fileDirname}/${fileBasenameNoExtension}.js",
+            "label": "test-file",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [],
+            "type": "shell"
+        },
     ]
 }

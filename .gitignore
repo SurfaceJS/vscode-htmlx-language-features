@@ -4,6 +4,8 @@ node_modules
 *.js.map
 *.tsbuildinfo
 *.vsix
+coverage
+.nyc_output
 !**/@types/**/*.d.ts
 !**/interfaces/**/*.d.ts
 !**/types/**/*.d.ts

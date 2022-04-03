@@ -3,6 +3,7 @@
         "onLanguage:htmlx"
     ],
     "author": "HitalloExiled",
+    "browser": "./client/browser.js",
     "categories": [
         "Programming Languages"
     ],
@@ -64,6 +65,8 @@
         "@typescript-eslint/parser": "^5.15.0",
         "eslint": "^8.11.0",
         "eslint-plugin-import": "^2.25.4",
+        "mocha": "^9.2.2",
+        "nyc": "^15.1.0",
         "typescript": "^4.6.2"
     },
     "displayName": "htmlx-language-features",
@@ -71,8 +74,11 @@
         "vscode": "^1.64.0"
     },
     "main": "./client/node.js",
-    "browser": "./client/browser.js",
     "name": "htmlx-language-features",
+    "scripts": {
+        "cover": "nyc npm run test",
+        "test": "mocha **/tests/**/*.spec.js"
+    },
     "version": "0.1.0",
     "workspaces": [
         "./client",

@@ -6,8 +6,12 @@
         "**/.gitignore": true,
         "**/.vscodeignore": true,
         "**/*.js.map": true,
-        "**/*.js": { "when": "$(basename).ts" },
-        "**/*.tsbuildinfo": true
+        "**/*.js": {
+            "when": "$(basename).ts"
+        },
+        "**/*.tsbuildinfo": true,
+        ".nyc_output": true,
+        "coverage": true
     },
     "typescript.tsdk": "node_modules\\typescript\\lib"
 }

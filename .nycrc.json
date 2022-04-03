@@ -1,0 +1,27 @@
+{
+    "all": false,
+    "branches": 90,
+    "exclude":
+    [
+        "**/tests"
+    ],
+    "extension":
+    [
+        ".js",
+        ".ts"
+    ],
+    "functions": 90,
+    "include":
+    [
+        "**/*.js",
+        "**/*.ts"
+    ],
+    "lines": 90,
+    "reporter":
+    [
+        "text-summary",
+        "lcov"
+    ],
+    "sourceMap": true,
+    "statements": 90
+}
