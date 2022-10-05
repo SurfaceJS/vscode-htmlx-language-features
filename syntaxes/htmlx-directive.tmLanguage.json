@@ -15,7 +15,7 @@
             "patterns":
             [
                 {
-                    "begin": "((?:@\\w+)|#\\b(?:if|else-if|else|for)\\b)|(#\\b(?:(?:inject|placeholder))\\b)(?:(?:(\\.)(?:(key|scope)|(\\w+)))|(?:(:)(\\w+)))?",
+                    "begin": "(?<!\\\")((?:@\\w+)|#\\b(?:if|else-if|else|for)\\b)|(#\\b(?:(?:inject|placeholder))\\b)(?:(?:(\\.)(?:(key|scope)|(\\w+)))|(?:(:)(\\w+)))?",
                     "beginCaptures": {
                         "1": {
                             "name": "keyword.control"
@@ -48,7 +48,7 @@
                     ]
                 },
                 {
-                    "begin": "(#\\b(?:\\w|-)+\\b)",
+                    "begin": "(?<!\\\")(#\\b(?:\\w|-)+\\b)",
                     "beginCaptures": {
                         "1": {
                             "name": "variable.other"
@@ -63,7 +63,7 @@
                     ]
                 },
                 {
-                    "begin": "(\\.{3})((?:(?:attributes|binds|injections|listeners)(\\|)?){1,4})(?<!\\|)",
+                    "begin": "(?<!\\\")(\\.{3})((?:(?:attributes|properties|listeners)(\\|)?){1,4})(?<!\\|)",
                     "beginCaptures": {
                         "1": {
                             "name": "keyword.operator.spread.js"

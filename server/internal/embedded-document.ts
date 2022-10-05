@@ -3,7 +3,7 @@
 import type { LanguageService, TextDocument } from "vscode-html-languageservice";
 import { TokenType }                          from "vscode-html-languageservice";
 import HTMLDocumentRegions                    from "./html-document-regions.js";
-import type EmbeddedRegion                    from "./types/embedded-region";
+import type EmbeddedRegion                    from "./types/embedded-region.js";
 
 export default class EmbeddedDocument
 {

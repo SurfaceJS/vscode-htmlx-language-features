@@ -4,8 +4,8 @@
 import { Position }        from "vscode-languageserver";
 import { TextDocument }    from "vscode-languageserver-textdocument";
 import type { Range }      from "vscode-languageserver-textdocument";
-import type EmbeddedRegion from "./types/embedded-region";
-import type LanguageRange  from "./types/language-range";
+import type EmbeddedRegion from "./types/embedded-region.js";
+import type LanguageRange  from "./types/language-range.js";
 
 export const CSS_STYLE_RULE = "__";
 

@@ -67,17 +67,28 @@
         "eslint-plugin-import": "^2.25.4",
         "mocha": "^9.2.2",
         "nyc": "^15.1.0",
-        "typescript": "^4.6.2"
+        "typescript": "^4.6.2",
+        "vsce": "^2.11.0"
     },
     "displayName": "htmlx-language-features",
     "engines": {
         "vscode": "^1.64.0"
     },
+    "license": "MIT",
     "main": "./client/node.js",
     "name": "htmlx-language-features",
+    "publisher": "HitalloExiled",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SurfaceJS/vscode-htmlx-language-features.git"
+    },
     "scripts": {
         "cover": "nyc npm run test",
-        "test": "mocha **/tests/**/*.spec.js"
+        "pack": "vsce package",
+        "postinstall": "tsc --build",
+        "test": "mocha **/tests/**/*.spec.js",
+        "ts:build": "tsc --build",
+        "ts:watch": "tsc --build --watch"
     },
     "version": "0.1.0",
     "workspaces": [

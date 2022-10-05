@@ -1,5 +1,5 @@
 import type { Range }    from "vscode-languageserver-textdocument";
-import type LanguageMode from "../interfaces/language-mode";
+import type LanguageMode from "../interfaces/language-mode.js";
 
 type LanguageModeRange = Range &
 {

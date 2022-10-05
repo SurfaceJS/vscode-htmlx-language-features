@@ -56,7 +56,6 @@
                 "!**/node_modules/**"
             ],
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-            "protocol": "pwa-node",
             "request": "launch",
             "runtimeArgs": [
                 "--experimental-json-modules",

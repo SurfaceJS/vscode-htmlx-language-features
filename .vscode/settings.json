@@ -1,17 +1,18 @@
 {
     "files.exclude": {
         "**/node_modules": true,
-        "**/package-lock.json": true,
         "**/.gitattributes": true,
         "**/.gitignore": true,
         "**/.vscodeignore": true,
-        "**/*.js.map": true,
-        "**/*.js": {
-            "when": "$(basename).ts"
-        },
         "**/*.tsbuildinfo": true,
         ".nyc_output": true,
         "coverage": true
     },
-    "typescript.tsdk": "node_modules\\typescript\\lib"
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "cSpell.words": [
+        "databind",
+        "Hitallo",
+        "Htmlx",
+        "languageservice"
+    ]
 }

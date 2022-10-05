@@ -1,6 +1,6 @@
 import type { HTMLDataV1, IHTMLDataProvider } from "vscode-html-languageservice";
 import { newHTMLDataProvider }                from "vscode-html-languageservice";
-import type CustomDataRequestService          from "./custom-data-request-service";
+import type CustomDataRequestService          from "./custom-data-request-service.js";
 
 function parseHTMLData(id: string, source: string): IHTMLDataProvider
 {

@@ -22,7 +22,7 @@ import type
 import type { TextDocument }   from "vscode-languageserver-textdocument";
 import Cache              from "../cache.js";
 import type DocumentContext    from "../document-context.js";
-import type ILanguageMode from "../interfaces/language-mode";
+import type ILanguageMode from "../interfaces/language-mode.js";
 import type Settings      from "../types/settings.js";
 import type Workspace     from "../types/workspace.js";
 

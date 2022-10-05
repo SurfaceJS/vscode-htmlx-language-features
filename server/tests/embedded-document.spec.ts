@@ -26,7 +26,7 @@ export default class EmbeddedDocumentSpec
             "   h1 { color: red; }",
             "</style>",
             "<script>",
-            "   alert('dont use alert');",
+            "   alert('don't use alert');",
             "</script>",
         ].join("\n");
 

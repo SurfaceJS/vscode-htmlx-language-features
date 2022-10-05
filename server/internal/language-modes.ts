@@ -2,7 +2,7 @@ import type { IHTMLDataProvider, LanguageService, Position } from "vscode-html-l
 import type { Disposable }                                   from "vscode-languageserver";
 import type { Range, TextDocument }                          from "vscode-languageserver-textdocument";
 import type HTMLDocumentRegions                              from "./html-document-regions.js";
-import type ILanguageMode                                    from "./interfaces/language-mode";
+import type ILanguageMode                                    from "./interfaces/language-mode.js";
 import type LanguageModeRange                             from "./types/language-mode-range.js";
 
 export default class LanguageModes implements Disposable

@@ -1,5 +1,5 @@
 import type { WorkspaceFolder } from "vscode-languageserver";
-import type Settings            from "./settings";
+import type Settings            from "./settings.js";
 
 type Workspace =
 {
